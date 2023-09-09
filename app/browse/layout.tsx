@@ -27,8 +27,7 @@ export default async function BrowseLayout({
       <body className={font.className}>
           <ClientOnly>
 
-          
-        <Sidebar>
+        <Sidebar currentUser={currentUser}>
 
           {children}
         </Sidebar>

@@ -7,13 +7,15 @@ import { BiSearch } from "react-icons/bi";
 import Box from './Box';
 import SidebarItem from "./SidebarItem";
 import Library from './Library';
+import {User } from '@prisma/client'
 
 
 interface Sidebarprops {
     children: React.ReactNode
+    currentUser?: User | null;
 }
 
-const Sidebar: React.FC<Sidebarprops> = ({ children }) => {
+const Sidebar: React.FC<Sidebarprops> = ({ children, currentUser }) => {
     const pathname = usePathname()
 
     const routes = useMemo(() => [
