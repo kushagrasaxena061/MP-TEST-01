@@ -16,7 +16,7 @@ const font = Nunito({
 });
 
 
-export default async function BrowseLayout({
+export default async function SearchLayout({
   children,
 }: {
   children: React.ReactNode
@@ -26,10 +26,8 @@ export default async function BrowseLayout({
     <html lang="en">
       <body className={font.className}>
           <ClientOnly>
-          <Navbar currentUser={currentUser}/>
 
         <Sidebar currentUser={currentUser}>
-
           {children}
         </Sidebar>
           </ClientOnly>
