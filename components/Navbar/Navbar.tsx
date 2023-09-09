@@ -6,6 +6,8 @@ import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 import Container from './Container';
+import { useSession } from "next-auth/react"
+
 
 
 interface NavbarProps {
@@ -17,6 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({
   currentUser,
 }) => {
   //console.log({currentUser})
+  const { data: session, status } = useSession()
   return ( 
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div
@@ -41,6 +44,9 @@ const Navbar: React.FC<NavbarProps> = ({
           <UserMenu currentUser={currentUser}/>
         </div>
       </Container>
+      <div>
+        {session?.user?.name} 
+      </div>
     </div>
   </div>
   );
