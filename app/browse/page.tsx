@@ -2,7 +2,7 @@ import React from 'react'
 
 const Browse = () => {
   return (
-    <div>
+    <div className='text-white'>
       Browse
     </div>
   )

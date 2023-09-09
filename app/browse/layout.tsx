@@ -1,11 +1,9 @@
 import React from 'react';
 import { Nunito } from 'next/font/google'
 import Navbar from '@/components/Navbar/Navbar';
-import ClientOnly from '@/components/ClientOnly';
-import RegisterModal from '@/components/Modals/RegisterModal';
-import ToasterProvider from '@/providers/ToasterProvider';
-import LoginModal from '@/components/Modals/LoginModal';
 import getCurrentUser from '@/actions/getCurrentUser';
+import Sidebar from '@/components/Sidebar/Sidebar';
+import ClientOnly from '@/components/ClientOnly';
 
 
 export const metadata = {
@@ -27,13 +25,15 @@ export default async function BrowseLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-      <ClientOnly>
-          <ToasterProvider/>
-          <RegisterModal />
-          <LoginModal/>
-          <Navbar currentUser={currentUser} />
-        </ClientOnly>
+          <ClientOnly>
+
+          
+        <Sidebar>
+
           {children}
+        </Sidebar>
+          </ClientOnly>
+        
       </body>
     </html>
   )
